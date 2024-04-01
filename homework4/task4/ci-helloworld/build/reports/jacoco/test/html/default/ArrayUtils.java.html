@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ArrayUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ci-helloworld</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ArrayUtils.java</span></div><h1>ArrayUtils.java</h1><pre class="source lang-java linenums"><span class="nc" id="L1">public class ArrayUtils {</span>
+
+    /**
+     * Find last index of element
+     *
+     * @param x array to search
+     * @param y value to look for
+     * @return last index of y in x; -1 if absent
+     * @throws NullPointerException if x is null
+     */
+    // test: x = [2, 3, 5]; y = 2; Expected = 0
+    public static int findLast (int[] x, int y) {
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        for (int i=x.length-1; i &gt;= 0; i--) {</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">            if (x[i] == y) {</span>
+<span class="fc" id="L15">                return i;</span>
+            }
+        }
+<span class="fc" id="L18">        return -1;</span>
+    }
+
+    /**
+     * Count odd or positive elements
+     *
+     * @param x array to search
+     * @return count of odd/positive values in x
+     * @throws NullPointerException if x is null
+     */
+    // test: x = [-3, -2, 0, 1, 4]; Expected = 3
+    public static int oddOrPos(int[] x) {
+<span class="fc" id="L30">        int count = 0;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        for (int i = 0; i &lt; x.length; i++) {</span>
+<span class="fc bfc" id="L32" title="All 4 branches covered.">            if (x[i] % 2 != 0 || x[i] &gt; 0) {</span>
+<span class="fc" id="L33">                count++;</span>
+            }
+        }
+<span class="fc" id="L36">        return count;</span>
+    }
+
+    public static int countOf(int[] x, int target) {
+<span class="fc" id="L40">        int count = 0;</span>
+<span class="fc bfc" id="L41" title="All 2 branches covered.">        for (int a: x) {</span>
+<span class="fc bfc" id="L42" title="All 2 branches covered.">            count = a == target ? count + 1 : count;</span>
+        }
+<span class="fc" id="L44">        return count;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
